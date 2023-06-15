@@ -68,6 +68,7 @@ router.delete('/:id', async (req, res) => {
       where: {
         id: req.params.id,
       },
+      cascade: true,
     });
     if (!categoryData) {
       res.status(404).json({ message: 'No category found with this id!' });
